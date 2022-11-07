@@ -26,7 +26,7 @@ git clone https://github.com/<your-username>/til.git
 cd framework-docs
 
 # Assign the original repo to a remote called "upstream"
-git remote add upstream https://github.com/Atri-Labs/framework-docs.git
+git remote add upstream https://github.com/Atri-Labs/til.git
 ```
 
 4. Add an extension for spelling and grammar checks in your editor. 
