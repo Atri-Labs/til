@@ -16,7 +16,7 @@ A compendium of "Today I Learned" snippets
 
 ```shell
 # Clone your fork of the repo into the current directory
-git clone https://github.com/<your-username>/framework-docs.git
+git clone https://github.com/<your-username>/til.git
 ```
 
 3. Configure the remotes. 
