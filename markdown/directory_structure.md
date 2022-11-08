@@ -1,11 +1,11 @@
-# How to write directory structure in Markdown? 
+# How to write directory structure in Markdown?
 
 Copy the following content and enclose it within three backticks.
 
 ```
 project
 │   README.md
-│   file001.txt    
+│   file001.txt
 │
 └───folder1
 │   │   file011.txt
@@ -15,7 +15,7 @@ project
 │       │   file111.txt
 │       │   file112.txt
 │       │   ...
-│   
+│
 └───folder2
     │   file021.txt
     │   file022.txt
