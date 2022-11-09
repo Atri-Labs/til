@@ -1,0 +1,1 @@
+The pseudo elements like `::before` and `::after` cannot be applied to self closing tags like `<img>`. More details in this [StackOverflow question](https://stackoverflow.com/questions/14585070/css-after-pseudo-element-not-showing-up-on-img)
