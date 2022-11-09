@@ -8,4 +8,4 @@ Recently a new kind of fonts have been introduced called SVG fonts that have cer
 
 # How to use web fonts?
 
-TODO
+You can import that CSS file like you import a normal CSS file. The CSS file will contain a `@font-face` rule that will have link to the font file with glyphs.

@@ -43,8 +43,8 @@ function ControlledInput() {
 			const newCursorPosition = computeNewCursorPosition(e);
 			setValue(newTextValue);
 			setCursorFn(() => {
-				// TODO: write correct code here
-				e.selection.cursor = newCursorPosition;
+				e.target.selectionStart = newCursorPosition;
+				e.target.selectionEnd = newCursorPosition;
 			});
 		},
 		[setCursorFn]
@@ -53,3 +53,5 @@ function ControlledInput() {
 	return <input value={value} onChange={onChange} />;
 }
 ```
+
+**A good demo video can be found [here](https://egghead.io/lessons/react-preserve-cursor-position-when-filtering-out-characters-from-a-react-input).**
