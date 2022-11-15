@@ -1,6 +1,6 @@
 # Common hydration issues
 
--   You are displaying time on a page. This page might have a different time on the client side, because the timezone of the server and the client/browser are different.
+-   You are displaying time on a page. This page might have a different time on the client side, because the timezone of the server and the client/browser are different. Using a random generator will have a similar effect.
 -   You are using `mdx` that wraps new line inside a `<p>` element. Hence, the following code might have unexpected behavior:
 
 <!-- prettier-ignore-start -->
