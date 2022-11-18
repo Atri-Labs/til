@@ -1,4 +1,4 @@
-# How to add arrows in Markdown?
+# How to add arrows in GitHub Flavored Markdown?
 
 | Activity                  |     Code     |
 | :---:                     |     :---:    |
