@@ -15,3 +15,18 @@ Since there are several steps involved in getting an intro, make this process ea
 - giving them copy to use in their outreach (beyond just the forwardable email)
 - giving them a deadline so that they allocate time for sending the intro request
 - sending them a reminder
+
+## Example of a good intro
+
+```
+Hey [INVESTOR] - I just chatted with the CEO of [COMPANY]. They might be raising soon. 
+
+CEO told me they just [EXCITING POINT 1], [EXCITING POINT 2], [EXCITING POINT 3] and already have [AWESOME INVESTOR] on board.
+
+Feels like a great fit for what you look at. Should I connect you?
+```
+
+Whether it’s through a more detailed blurb, coaching the connector on what to say/write, or just focusing on delivering real progress in your business, your goal should be to make it as easy as possible for connectors to make this type of intros - Intros that connectors will be eager to make and will tell investors, “Thank me later…”
+
+## References
+[2 Types of Intros (how best to request intros) by Jason Yeh](https://www.adamantventures.com/blog-post/2-types-of-intros)
