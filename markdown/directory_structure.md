@@ -1,4 +1,4 @@
-# How to write directory structure in Markdown?
+# How to write directory structure in GitHub Flavored Markdown?
 
 Copy the following content and enclose it within three backticks.
 
