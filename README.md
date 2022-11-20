@@ -1,6 +1,8 @@
-# Today I learned
+# Today I Learned
 
-A compendium of "Today I Learned" snippets
+A compendium of "Today I Learned" snippets prepared by the team at Atri Labs
+
+It covers a wide range of learning experiences while building an open-source company in the field of web development. 
 
 ## Objective of this repository
 
