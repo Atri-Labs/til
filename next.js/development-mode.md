@@ -91,6 +91,16 @@ this.fetchComponent(route).then<CompletePrivateRouteInfo>(
           })
 ```
 
+The `fetchComponent` calls `this.pageLoader.loadPage(route)` and the control shifts to the next module.
+
+#### `packages/next/client/page-loader.ts`
+
+The `PageLoader.loadPage` method calls `this.routeLoader.loadRoute(route)` and the control shifts to the next module.
+
+#### `packages/next/client/route-loader.ts`
+
+The `RouteLoader` is responsible to fetch the module that contains the page's component and other details. Two important methods for this discussion are `loadRoute` and `onEntryPoint`. The `loadRoute` method calls `getFilesRoute` function that makes the `fetch` request to `'/_next/static/chunks/pages' + ${route}.js` file and we finally escape the client side.
+
 ### After receiving the module from the server
 
 The `__NEXT_P` is an array, with a new method attached called `push`. This `push` method is assigned a function called `register`.
@@ -107,3 +117,7 @@ The `__NEXT_P` is an array, with a new method attached called `push`. This `push
 -   \_\_NEXT_ROUTER_BASEPATH
 -   \_\_NEXT_SCROLL_RESTORATION
 -   \_\_NEXT_I18N_SUPPORT
+
+### Useful libraries
+
+-   `react-is`
