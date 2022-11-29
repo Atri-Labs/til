@@ -24,6 +24,34 @@ By looking at the output in the terminal, it seems the new page has not been com
 
 ### On the server side
 
+Let's start with the entry point to dev server i.e. `packages/next/cli/next-dev`.
+
+#### `packages/next/cli/next-dev`
+
+It calls a function called `startServer` with some options not relevant to this discussion. This returns a `Promise<NextServer>` on which `app.prepare()` is called. We will shortly see that `app.prepare()` actually starts the server.
+
+#### `packages/next/server/lib/start-server.ts`
+
+It creates a normal `http.Server` that is wrapped inside a `NextServer` instance. In the code snippet below, `next` function should have been renamed to `createServer`.
+
+```tsx
+const app = next({
+	...opts,
+	hostname,
+	customServer: false,
+	httpServer: server,
+	port: addr && typeof addr === "object" ? addr.port : port,
+});
+```
+
+#### `packages/next/server/next.ts`
+
+The `createServer` function in this file creates and returns an instance of `NextServer` (a class created in this same file). The entry point to this class is the `prepare()` method as used in `packages/next/cli/next-dev` above. The `prepare` method calls `getServer()` method that finally calls `createServer` method. It seems that `NextServer` has been created with [Strategy Pattern](https://refactoring.guru/design-patterns/strategy) in mind i.e. the `createServer` method returns a `DevServer` in development mode and a `NextNodeServer` instance in production mode. The `DevServer` actually inherits from `NextNodeServer`, hence, the pattern is not exactly strategy pattern.
+
+#### `packages/next/server/dev/next-dev-server.ts`
+
+The `DevServer` class calls `super`...........
+
 Next.JS uses `webpack.MultiCompiler`. Also, Next.JS seems to be using it's own version of the `webpack-dev-server`. Whenever the `DevServer` receives request for a new page, the new entry is added to the webpack `entry` and `compiler.watching?.invalidate()` is called. This is made possible due to the Webpack's [dynamic entry](https://webpack.js.org/configuration/entry-context/#dynamic-entry) feature.
 
 Next.JS has created many `webpack` loaders and one such loader is `next-client-pages-loader`. Next.JS uses another feature of Webpack called [inline](https://webpack.js.org/concepts/loaders/#inline) loaders. Using this feature, the `absolutePagePath` and `page` is passed to `next-client-pages-loader` that returns a code that looks like below:
@@ -121,3 +149,5 @@ The `__NEXT_P` is an array, with a new method attached called `push`. This `push
 ### Useful libraries
 
 -   `react-is`
+-   `jest-worker`
+-   `strip-ansi`
